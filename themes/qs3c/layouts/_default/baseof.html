@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+<html>
+    {{- partial "head.html" . -}}
+    <body class="has-navbar-fixed-top">
+        <div id="content">
+        {{- block "main" . }}{{- end }}
+        </div>
+    </body>
+</html>

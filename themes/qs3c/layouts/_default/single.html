@@ -1,0 +1,26 @@
+
+{{ define "main" }}
+
+
+<section class="section is-below-nav">
+    <div class="container">
+        <div class="columns">
+            <div class="column is-half">
+
+                {{ range .Params.images }}
+                <figure class="image margin-bottom-2 {{ $.Params.image_extra_css }}">
+                    <img src="/img/{{.}}">
+                </figure>
+                {{ end }}
+
+                <div class="content has-text-justified">
+                    {{.Content}}
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+{{ end }}

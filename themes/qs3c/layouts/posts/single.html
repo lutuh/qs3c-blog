@@ -1,0 +1,56 @@
+{{ define "main" }}
+
+
+<section class="section is-below-nav">
+    <div class="container">
+        <div class="columns">
+            <div class="column is-half">
+
+                {{ range .Params.images }}
+                <figure class="image margin-bottom-2">
+                    <img src="/img/{{.}}">
+                </figure>
+                {{ end }}
+
+                <hr/>
+
+                <h2 class="title is-4">{{.Description}}</h2>
+                <h3 class="subtitle is-6">{{.Params.location}}</h3>
+
+                <div class="content has-text-justified">
+                    {{.Content}}
+                </div>
+
+                {{ if .Params.client }}
+                    <h4 class="title is-6">Maîtrise d’ouvrage :</h4>
+                    <p class="subtitle is-6 is-spaced">{{.Params.client}}</p>
+                {{ end }}
+
+                <h4 class="title is-6">Maîtrise d’œuvre :</h4>
+                <p class="subtitle is-6">
+                    {{range .Params.builder}}
+                    {{ . }}<br/>
+                    {{end}}
+                </p>
+                <ul>
+
+                    <dl>
+                        <dt>Date :</dt>
+                        <dd>{{.Params.period}}</dd>
+                        {{ if .Params.surface }}
+                        <dt>Surface :</dt>
+                        <dd>{{.Params.surface}}</dd>
+                        {{ end }}
+                        {{ if .Params.cost }}
+                        <dt>Coût des travaux :</dt>
+                        <dd>{{.Params.cost}}</dd>
+                        {{ end }}
+                    </dl>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+{{ end }}

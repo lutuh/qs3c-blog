@@ -1,5 +1,5 @@
 baseURL = "https://qs3c.net/"
 languageCode = "en-us"
 title = "My New qs3c Site"
-theme = "ananke"
+theme = "qs3c"
 
